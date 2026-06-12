@@ -1416,8 +1416,10 @@ body.admin-body {
 .toast-container {
   position: fixed; top: 24px; right: 24px; z-index: 9999;
   display: flex; flex-direction: column; gap: 10px;
+  pointer-events: none; /* boşken dokunuşları engellemesin */
 }
 .toast {
+  pointer-events: auto;
   background: var(--dark-2);
   border: var(--border-gold);
   border-radius: 4px;
@@ -4018,7 +4020,7 @@ body { overflow-x: hidden; }
   }
 
   /* Toast: tam genişlik küçük ekranda */
-  .toast-container { left: 12px; right: 12px; bottom: 12px; }
+  .toast-container { top: auto; left: 12px; right: 12px; bottom: 12px; }
   .toast { min-width: 0; width: 100%; }
 }
 
