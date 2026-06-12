@@ -323,6 +323,12 @@ function hesaplaKredi() {
   const dot  = document.getElementById('cursorDot');
   const ring = document.getElementById('cursorRing');
   if (!dot || !ring) return;
+  // Dokunmatik ekranlarda cursor efektini devre dışı bırak
+  if (window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+    dot.style.display = 'none';
+    ring.style.display = 'none';
+    return;
+  }
 
   let mx = -100, my = -100;   // mouse position
   let rx = -100, ry = -100;   // ring position (lagged)

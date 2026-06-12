@@ -258,20 +258,29 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; line-
 /* â”€â”€ Mobil Tam Ekran MenÃ¼ â”€â”€ */
 .mobile-menu {
   display: none; /* JS ile kontrol edilir — medya sorgusuyla açılmaz */
+  visibility: hidden;
+  pointer-events: none;
   position: fixed; inset: 0;
   z-index: 995;
   background: rgba(6,6,6,0.97);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
+.mobile-menu.open,
+.mobile-menu.closing {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
 .mobile-menu.open {
   display: block;
+  visibility: visible;
+  pointer-events: auto;
   animation: mmFadeIn 0.4s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
 }
 .mobile-menu.closing {
   display: block;
+  visibility: visible;
+  pointer-events: auto;
   animation: mmFadeOut 0.35s ease forwards;
 }
 @keyframes mmFadeIn  { from { opacity: 0; } to { opacity: 1; } }
@@ -418,11 +427,13 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; line-
   background-size: cover; background-position: center;
   transform: scale(1.05);
   animation: hero-zoom 20s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 @keyframes hero-zoom { 0%{transform:scale(1.05)} 100%{transform:scale(1.12)} }
 .hero-overlay {
   position: absolute; inset: 0;
   background: rgba(8,8,8,0.83);
+  pointer-events: none;
 }
 .hero-content {
   position: relative; z-index: 2;
@@ -955,10 +966,12 @@ footer {
   position: absolute; inset: 0;
   background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80');
   background-size: cover; background-position: center;
+  pointer-events: none;
 }
 .page-hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(135deg, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.7) 100%);
+  pointer-events: none;
 }
 .page-hero-content {
   position: relative; z-index: 2;
@@ -1985,10 +1998,12 @@ body.admin-body {
   background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=80');
   background-size: cover; background-position: center;
   opacity: 0.07;
+  pointer-events: none;
 }
 .vip-glow {
   position: absolute; inset: 0;
   background: radial-gradient(ellipse at 50% 40%, rgba(201,164,85,0.09) 0%, transparent 65%);
+  pointer-events: none;
 }
 /* Ãœst altÄ±n Ã§izgi */
 .vip-section::before {
@@ -2451,9 +2466,13 @@ body.admin-body {
   .cursor-dot.is-clicking  { width: 6px; height: 6px; background: var(--gold-dark); }
   .cursor-ring.is-clicking { width: 28px; height: 28px; }
 }
+/* Dokunmatik ekranlarda cursor elemanlarını tamamen gizle */
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+}
 
 /* ========================================================
-   KREDÄ° HESAPLAYICISI
+   KREDİ HESAPLAYICISI
    ======================================================== */
 .kredi-hero-section {
   position: relative;
@@ -2463,6 +2482,7 @@ body.admin-body {
 }
 .kredi-hero-bg {
   position: absolute; inset: 0; z-index: 0;
+  pointer-events: none;
   background:
     radial-gradient(ellipse 60% 80% at 20% 50%, rgba(154,120,48,0.08) 0%, transparent 70%),
     radial-gradient(ellipse 50% 70% at 80% 30%, rgba(201,164,85,0.05) 0%, transparent 70%);
@@ -2983,6 +3003,7 @@ body.admin-body {
 }
 .talep-bg {
   position: absolute; inset: 0; z-index: 0;
+  pointer-events: none;
   background:
     radial-gradient(ellipse 70% 80% at 80% 60%, rgba(154,120,48,0.07) 0%, transparent 70%),
     radial-gradient(ellipse 50% 60% at 10% 20%, rgba(201,164,85,0.04) 0%, transparent 70%);
@@ -3972,7 +3993,8 @@ label, select {
 }
 
 /* ── 13. Genel: taşma önleme ───────────────────────────────────── */
-html, body { overflow-x: hidden; }
+/* Sadece body'de overflow-x hidden (html'de olması iOS touch'u etkileyebilir) */
+body { overflow-x: hidden; }
 .container { max-width: 100%; }
 
 /* Minimum dokunma hedefi: tüm butonlar için */
