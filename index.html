@@ -1,0 +1,1121 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="AVA Gayrimenkul & Yatırım — Gülşah Çırak ile lüks konut, villa, arsa ve ticari gayrimenkul danışmanlığı." />
+  <title>AVA Gayrimenkul & Yatırım | Gülşah Çırak</title>
+  <link rel="icon" href="avalogo.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ░░ CUSTOM CURSOR ░░ -->
+<div class="cursor-dot"  id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ░░ TOAST ░░ -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ░░ PRELOADER ░░ -->
+<div id="preloader">
+  <img src="avalogo.png" alt="AVA Logo" />
+  <div class="preloader-bar"><div class="preloader-fill"></div></div>
+</div>
+
+<!-- ░░ TALEP FAB ░░ -->
+<a class="talep-fab" id="talepFab" href="#talep" title="Mülk Talebi Oluştur">
+  <i class="fa-solid fa-magnifying-glass-dollar"></i>
+  <span class="talep-fab-text">Talep Oluştur</span>
+</a>
+
+<!-- ░░ WHATSAPP FAB ░░ -->
+<a class="whatsapp-fab" href="https://wa.me/905454480868?text=Merhaba%2C%20gayrimenkul%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" title="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="wa-tooltip">WhatsApp ile Ulaşın</span>
+</a>
+
+<!-- ░░ NAVBAR ░░ -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="avalogo.png" alt="AVA Gayrimenkul" />
+    <span class="nav-brand-text">
+      <span class="nbt-main">AVA Gayrimenkul</span>
+      <span class="nbt-sub">& Yatırım</span>
+    </span>
+  </a>
+
+  <!-- Desktop menü -->
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="#hakkimizda" class="nav-link">Hakkımızda</a></li>
+    <li><a href="portfoy.html" class="nav-link">Portföy</a></li>
+    <li><a href="#hizmetler" class="nav-link">Hizmetler</a></li>
+    <li><a href="#sahibinden" class="nav-link">Sahibinden</a></li>
+    <li><a href="#talep" class="nav-link">Talep Oluştur</a></li>
+    <li><a href="#hesaplayici" class="nav-link">Kredi Hesapla</a></li>
+    <li><a href="#iletisim" class="nav-link">İletişim</a></li>
+  </ul>
+
+  <!-- Lüks hamburger butonu -->
+  <button class="nav-toggle" id="navToggle" aria-label="Menü aç/kapat">
+    <div class="hamburger-box">
+      <span class="hb-line hb-top"></span>
+      <span class="hb-line hb-mid"></span>
+      <span class="hb-line hb-bot"></span>
+    </div>
+  </button>
+</nav>
+
+<!-- Mobil tam ekran menü (hamburgerdan bağımsız) -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <!-- Logo -->
+    <div class="mm-logo">
+      <img src="avalogo.png" alt="AVA Gayrimenkul" />
+    </div>
+
+    <!-- Linkler -->
+    <nav class="mm-nav">
+      <a href="#hakkimizda" class="mm-link" data-idx="0">
+        <span class="mm-num">01</span>
+        <span class="mm-text">Hakkımızda</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+      <a href="portfoy.html" class="mm-link" data-idx="1">
+        <span class="mm-num">02</span>
+        <span class="mm-text">Portföy</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+      <a href="#hizmetler" class="mm-link" data-idx="2">
+        <span class="mm-num">03</span>
+        <span class="mm-text">Hizmetler</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+      <a href="#sahibinden" class="mm-link" data-idx="3">
+        <span class="mm-num">04</span>
+        <span class="mm-text">Sahibinden</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+      <a href="#talep" class="mm-link" data-idx="4">
+        <span class="mm-num">05</span>
+        <span class="mm-text">Talep Oluştur</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+      <a href="#iletisim" class="mm-link" data-idx="5">
+        <span class="mm-num">06</span>
+        <span class="mm-text">İletişim</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+      <a href="#hesaplayici" class="mm-link" data-idx="6">
+        <span class="mm-num">07</span>
+        <span class="mm-text">Kredi Hesapla</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+    </nav>
+
+    <!-- Alt bilgi -->
+    <div class="mm-footer">
+      <div class="mm-contact-row">
+        <a href="tel:+905454480868" class="mm-contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+90 545 448 08 68</span>
+        </a>
+        <a href="https://wa.me/905454480868" class="mm-contact-item" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+      <div class="mm-socials">
+        <a href="#" class="mm-social"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <p class="mm-copy">© 2025 AVA Gayrimenkul & Yatırım</p>
+    </div>
+  </div>
+</div>
+
+<!-- ░░ HERO ░░ -->
+<section class="hero" id="anasayfa">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+
+    <!-- Rozet -->
+    <div class="hero-badge">
+      <i class="fa-solid fa-gem"></i>
+      Lüks Gayrimenkul & Yatırım
+    </div>
+
+    <!-- Başlık -->
+    <h1 class="hero-title">
+      <span>Hayalinizdeki</span>
+      <span class="gold-text">Mülkü Bulun</span>
+    </h1>
+
+    <!-- Alt yazı -->
+    <p class="hero-subtitle">
+      AVA Gayrimenkul olarak, yılların tecrübesi ve güvenilirliği ile size en değerli yatırımı sunuyoruz.
+    </p>
+
+    <!-- Eylem Butonları -->
+    <div class="hero-actions">
+      <a href="portfoy.html" class="btn btn-gold">
+        Portföyü Keşfet &nbsp;<i class="fa-solid fa-arrow-right"></i>
+      </a>
+      <a href="#talep" class="btn btn-outline hero-talep-btn">
+        <i class="fa-solid fa-magnifying-glass-dollar"></i>&nbsp; Talep Oluştur
+      </a>
+    </div>
+
+    <!-- Aşağı kaydır göstergesi -->
+    <div class="hero-scroll">
+      <i class="fa-solid fa-angle-down"></i>
+    </div>
+
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stats-inner">
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count="250">0</span>
+        <span class="hero-stat-label">Satılan Mülk</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count="10">0</span>
+        <span class="hero-stat-label">Yıllık Deneyim</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count="180">0</span>
+        <span class="hero-stat-label">Mutlu Müşteri</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num" data-count="95">0</span>
+        <span class="hero-stat-label">% Memnuniyet</span>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<!-- ░░ İLAN ARAMA — DEVRE DIŞI (sahibinden yönlendirmesine geçildi) ░░
+<div class="search-section" id="arama">
+  <div class="search-inner">
+    <div class="search-group search-sm">
+      <label>İşlem Türü</label>
+      <select id="srIslem">
+        <option value="">Tümü</option>
+        <option value="satilik">Satılık</option>
+        <option value="kiralik">Kiralık</option>
+      </select>
+    </div>
+    <div class="search-group search-sm">
+      <label>Mülk Tipi</label>
+      <select id="srTip">
+        <option value="">Tümü</option>
+        <option value="daire">Daire</option>
+        <option value="villa">Villa</option>
+        <option value="arsa">Arsa</option>
+        <option value="dukkan">Dükkan</option>
+        <option value="ofis">Ofis</option>
+        <option value="bina">Bina</option>
+      </select>
+    </div>
+    <div class="search-group" style="flex: 0 0 190px; min-width:0;">
+      <label>Konum</label>
+      <input type="text" id="srKonum" placeholder="Şehir veya ilçe..." />
+    </div>
+    <div class="search-group" style="flex: 0 0 190px; min-width:0;">
+      <label>Maks. Fiyat (₺)</label>
+      <input type="number" id="srFiyat" placeholder="Max. fiyat..." min="0" />
+    </div>
+    <button class="btn btn-gold search-btn" onclick="runSearch()">
+      <i class="fa-solid fa-magnifying-glass"></i> Ara
+    </button>
+  </div>
+</div>
+░░ İLAN ARAMA SONU ░░ -->
+
+<!-- ░░ LÜKS HİZMET ŞERİDİ ░░ -->
+<div class="luxury-ribbon">
+  <div class="luxury-ribbon-track">
+    <span><i class="fa-solid fa-camera-rotate"></i> 360° Sanal Tur</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-helicopter"></i> Drone Fotoğrafçılığı</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-lock-open"></i> Özel Portföy Erişimi</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-chart-pie"></i> Yatırım Analizi</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-crown"></i> VIP Danışmanlık</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-shield-halved"></i> Güvenli & Şeffaf İşlem</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-file-signature"></i> Tapu & Hukuki Destek</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-magnifying-glass-dollar"></i> Ücretsiz Ekspertiz</span>
+    <span class="lrb-sep">✦</span>
+    <!-- Seamless döngü için tekrar -->
+    <span><i class="fa-solid fa-camera-rotate"></i> 360° Sanal Tur</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-helicopter"></i> Drone Fotoğrafçılığı</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-lock-open"></i> Özel Portföy Erişimi</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-chart-pie"></i> Yatırım Analizi</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-crown"></i> VIP Danışmanlık</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-shield-halved"></i> Güvenli & Şeffaf İşlem</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-file-signature"></i> Tapu & Hukuki Destek</span>
+    <span class="lrb-sep">✦</span>
+    <span><i class="fa-solid fa-magnifying-glass-dollar"></i> Ücretsiz Ekspertiz</span>
+    <span class="lrb-sep">✦</span>
+  </div>
+</div>
+
+<!-- ░░ FEATURED LISTINGS — DEVRE DIŞI (sahibinden yönlendirmesine geçildi) ░░
+<section class="featured-section" id="ilanlar">
+  <div class="container">
+    <div class="section-header animate">
+      <div class="section-label">Öne Çıkan İlanlar</div>
+      <h2 class="section-title">Seçkin <span class="gold-text">Portföyümüz</span></h2>
+      <p class="section-subtitle">En değerli mülklerimizi keşfedin. Her biri özenle seçilmiş, kalite garantili.</p>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="properties-grid" id="featuredGrid">
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="animate">
+      <a href="portfoy.html" class="btn btn-outline">
+        Tüm İlanları Görüntüle <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+░░ FEATURED LISTINGS SONU ░░ -->
+
+<!-- ░░ SAHIBINDEN İLANLAR YÖNLENDIRME ░░ -->
+<section class="featured-section" id="ilanlar">
+  <div class="container">
+    <div class="section-header animate" style="text-align:center;">
+      <div class="section-label">Güncel İlanlar</div>
+      <h2 class="section-title">Tüm İlanlarımız <span class="gold-text">Sahibinden'de</span></h2>
+      <p class="section-subtitle">Satılık ve kiralık tüm mülklerimize sahibinden.com üzerinden ulaşabilirsiniz.</p>
+      <div class="gold-divider center"></div>
+    </div>
+    <div class="sahibinden-card animate" style="max-width:720px;margin:0 auto;">
+      <div class="sahibinden-icon">
+        <i class="fa-solid fa-house-circle-check"></i>
+      </div>
+      <div class="sahibinden-content">
+        <h3>Portföyümüzü <span class="gold-text">Sahibinden.com'da</span> İnceleyin</h3>
+        <p>
+          Güncel satılık ve kiralık mülklerimizin tamamına sahibinden.com profil sayfamızdan ulaşabilirsiniz.
+          Yüzlerce seçenek sizi bekliyor.
+        </p>
+        <div class="sahibinden-link-group">
+          <div class="sahibinden-url" id="sahibindenUrlDisplay2">
+            <i class="fa-solid fa-link"></i>
+            <span id="sahibindenLinkText2">sahibinden.com/ava-gayrimenkul</span>
+          </div>
+          <a href="#" class="btn btn-gold" id="sahibindenBtn2" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-external-link"></i> Tüm İlanları Gör
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ MÜLK TALEBİ ░░ -->
+<section class="talep-section talep-prominent" id="talep">
+  <div class="talep-bg"></div>
+
+  <!-- Üst şerit: dikkat çekici banner -->
+  <div class="talep-banner">
+    <div class="talep-banner-inner">
+      <span class="talep-banner-icon"><i class="fa-solid fa-magnifying-glass-dollar"></i></span>
+      <span class="talep-banner-text">Aradığınız mülkü listelerimizde bulamadınız mı?</span>
+      <span class="talep-banner-cta">Kriterleri girin — sizi biz arayalım <i class="fa-solid fa-arrow-down"></i></span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="section-header center animate">
+      <div class="section-label">Özel Mülk Talebi</div>
+      <h2 class="section-title">Hayalinizdeki Mülkü<br><span class="gold-text">Sizin İçin Bulalım</span></h2>
+      <p class="section-subtitle">Kriterlerinizi belirtin — portföyümüzden uygun seçenekleri anında görün, bulamazsak sizi biz ararız.</p>
+      <div class="gold-divider center"></div>
+    </div>
+
+    <div class="talep-card animate">
+      <form id="talepForm" onsubmit="submitTalep(event)">
+
+        <!-- Konum & Tür & Tip -->
+        <div class="talep-grid-3">
+          <div class="talep-field">
+            <label><i class="fa-solid fa-location-dot"></i> İlçe / Mahalle</label>
+            <input type="text" id="tlIlce" placeholder="Örn: Atakum, Yenimahalle..." />
+          </div>
+          <div class="talep-field">
+            <label><i class="fa-solid fa-building"></i> Kullanım Amacı</label>
+            <select id="tlTur">
+              <option value="all">Fark Etmez</option>
+              <option value="konut">Konut</option>
+              <option value="isyeri">İşyeri</option>
+            </select>
+          </div>
+          <div class="talep-field">
+            <label><i class="fa-solid fa-house"></i> Mülk Tipi</label>
+            <select id="tlTip">
+              <option value="all">Fark Etmez</option>
+              <option value="daire">Daire</option>
+              <option value="villa">Villa</option>
+              <option value="arsa">Arsa</option>
+              <option value="ofis">Ofis</option>
+              <option value="dukkan">Dükkan</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Oda & Alan & Bütçe -->
+        <div class="talep-grid-3">
+          <div class="talep-field">
+            <label><i class="fa-solid fa-door-open"></i> Oda Sayısı</label>
+            <select id="tlOda">
+              <option value="all">Fark Etmez</option>
+              <option value="1">1+1</option>
+              <option value="2">2+1</option>
+              <option value="3">3+1</option>
+              <option value="4">4+1</option>
+              <option value="5">5+</option>
+            </select>
+          </div>
+          <div class="talep-field">
+            <label><i class="fa-solid fa-ruler-combined"></i> Maks. Alan (m²)</label>
+            <input type="number" id="tlAlan" placeholder="Örn: 150" min="0" />
+          </div>
+          <div class="talep-field">
+            <label><i class="fa-solid fa-lira-sign"></i> Maks. Bütçe (₺)</label>
+            <input type="text" inputmode="numeric" id="tlButce"
+                   placeholder="Örn: 3.500.000"
+                   oninput="formatKrediInput(this)" autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="talep-divider"></div>
+        <div class="talep-divider-label">İletişim Bilgileriniz</div>
+
+        <!-- Ad & Tel -->
+        <div class="talep-grid-2">
+          <div class="talep-field">
+            <label><i class="fa-solid fa-user"></i> Ad Soyad *</label>
+            <input type="text" id="tlAd" placeholder="Adınız Soyadınız" required autocomplete="name" />
+          </div>
+          <div class="talep-field">
+            <label><i class="fa-solid fa-phone"></i> Telefon *</label>
+            <input type="tel" id="tlTel" placeholder="+90 545 448 08 68" required autocomplete="tel" />
+          </div>
+        </div>
+
+        <div class="talep-submit-row">
+          <button type="submit" class="btn btn-gold talep-submit-btn">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp'a Gönder & Eşleşmeleri Gör
+          </button>
+          <p class="talep-note">
+            <i class="fa-solid fa-shield-halved"></i>
+            Bilgileriniz yalnızca danışmanımıza iletilir. WhatsApp'ınız otomatik açılacaktır.
+          </p>
+        </div>
+
+      </form>
+    </div><!-- /talep-card -->
+
+    <!-- Sonuçlar -->
+    <div id="talepSonuclar" style="display:none;" class="talep-sonuc-wrap">
+      <div class="talep-sonuc-header">
+        <h3>Portföyümüzden <span class="gold-text">Öneriler</span></h3>
+        <p class="talep-sonuc-count" id="talepSonucCount"></p>
+      </div>
+      <div id="talepNoMatch" class="talep-no-match" style="display:none;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <h4>Şu an tam eşleşme bulunamadı</h4>
+        <p>Portföyümüzde kriterlerinize uygun ilan bulunmuyor, ancak talebiniz alındı.<br>
+           Danışmanımız en kısa sürede alternatif seçeneklerle sizi arayacaktır.</p>
+      </div>
+      <div class="properties-grid" id="talepMatchGrid"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ░░ SAHİBİNDEN SECTION ░░ -->
+<section class="sahibinden-section" id="sahibinden">
+  <div class="container">
+    <div class="section-header center animate">
+      <div class="section-label">Online İlanlar</div>
+      <h2 class="section-title">Sahibinden.com'da <span class="gold-text">İlanlarımız</span></h2>
+      <div class="gold-divider center"></div>
+    </div>
+    <div class="sahibinden-card animate">
+      <div class="sahibinden-icon">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </div>
+      <div class="sahibinden-content">
+        <h3>Tüm İlanlarımızı <span class="gold-text">Sahibinden'de</span> Takip Edin</h3>
+        <p>
+          Sahibinden.com üzerindeki güncel portföyümüze erişmek için aşağıdaki linki kullanabilirsiniz.
+          Yüzlerce satılık ve kiralık mülk seçeneği sizi bekliyor.
+        </p>
+        <div class="sahibinden-link-group">
+          <div class="sahibinden-url" id="sahibindenUrlDisplay">
+            <i class="fa-solid fa-link"></i>
+            <span id="sahibindenLinkText">sahibinden.com/ava-gayrimenkul</span>
+          </div>
+          <a href="#" class="btn btn-gold" id="sahibindenBtn" target="_blank">
+            <i class="fa-solid fa-external-link"></i> İlanları Gör
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ MÜŞTERİ REFERANSLARI ░░ -->
+<section class="testimonials-section" id="referanslar">
+  <div class="container">
+    <div class="section-header center animate">
+      <div class="section-label">Müşteri Yorumları</div>
+      <h2 class="section-title">Onların <span class="gold-text">Güveni</span></h2>
+      <p class="section-subtitle">Yüzlerce mutlu müşterimizden bazılarının gerçek deneyimleri.</p>
+      <div class="gold-divider center"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card animate">
+        <div class="testimonial-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Gülşah Hanım ile çalışmak harika bir deneyimdi. Aradığım villayı tam bütçeme uygun buldu ve tüm tapu süreçlerinde yanımda oldu. Hem hızlı hem de şeffaf bir danışmanlık aldım."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <strong>Mehmet K.</strong>
+            <span>Villa Sahibi · Samsun</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card animate">
+        <div class="testimonial-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Ticari mülk yatırımı konusunda son derece bilgili ve güvenilir bir danışman. Piyasa analizini çok profesyonelce sundu. AVA Gayrimenkul'ü şiddetle tavsiye ediyorum."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <strong>Ayşe T.</strong>
+            <span>Yatırımcı · Ankara</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card animate">
+        <div class="testimonial-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Hem satışta hem de kiralamada AVA Gayrimenkul ile çalıştık. Her seferinde hızlı, şeffaf ve güvenilir hizmet aldık. Artık başka hiçbir acenteyle çalışmayı düşünemiyoruz."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">E</div>
+          <div>
+            <strong>Emre S.</strong>
+            <span>Müşteri · İstanbul</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ SERVICES ░░ -->
+<section class="services-section" id="hizmetler">
+  <div class="container">
+    <div class="section-header center animate">
+      <div class="section-label">Hizmetlerimiz</div>
+      <h2 class="section-title">Size Nasıl <span class="gold-text">Yardımcı Olabiliriz?</span></h2>
+      <p class="section-subtitle">Gayrimenkul dünyasında her adımda yanınızdayız.</p>
+      <div class="gold-divider center"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card animate">
+        <div class="service-icon"><i class="fa-solid fa-house"></i></div>
+        <h3>Konut Satışı</h3>
+        <p>Daire, villa ve müstakil ev satışında uzman danışmanlık hizmetiyle en iyi fiyatı elde edin.</p>
+      </div>
+      <div class="service-card animate">
+        <div class="service-icon"><i class="fa-solid fa-key"></i></div>
+        <h3>Kiralık Mülk</h3>
+        <p>İhtiyacınıza uygun kiralık mülkleri hızlıca bulun. Güvenceli ve şeffaf kiralama süreçleri.</p>
+      </div>
+      <div class="service-card animate">
+        <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>Yatırım Danışmanlığı</h3>
+        <p>Gayrimenkul yatırımlarınızı doğru stratejilerle büyütün. Piyasa analizi ve portföy yönetimi.</p>
+      </div>
+      <div class="service-card animate">
+        <div class="service-icon"><i class="fa-solid fa-landmark"></i></div>
+        <h3>Ticari Gayrimenkul</h3>
+        <p>Ofis, dükkan, depo ve fabrika gibi ticari mülklerde kapsamlı çözümler sunuyoruz.</p>
+      </div>
+      <div class="service-card animate">
+        <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
+        <h3>Tapu & Hukuki İşlemler</h3>
+        <p>Tapu devri, ipotek ve hukuki süreçlerde güvenli ve hızlı çözümler.</p>
+      </div>
+      <div class="service-card animate">
+        <div class="service-icon"><i class="fa-solid fa-magnifying-glass-dollar"></i></div>
+        <h3>Ekspertiz & Değerleme</h3>
+        <p>Mülkünüzün gerçek piyasa değerini profesyonel ekspertiz raporlarıyla öğrenin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ ABOUT ░░ -->
+<section class="about-section" id="hakkimizda">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap animate">
+        <img
+          class="about-img"
+          src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&q=80"
+          alt="AVA Gayrimenkul Ofis"
+        />
+        <div class="about-badge">
+          <span class="about-badge-num">10+</span>
+          <span class="about-badge-text">Yıllık Deneyim</span>
+        </div>
+      </div>
+      <div class="about-content animate">
+        <div class="section-label">Hakkımızda</div>
+        <h2 class="section-title">
+          Güven ve <span class="gold-text">Uzmanlıkla</span> Yanınızdayız
+        </h2>
+        <div class="gold-divider"></div>
+        <p class="section-subtitle">
+          AVA Gayrimenkul & Yatırım olarak, Gülşah Çırak önderliğinde sektördeki deneyimimizi müşterilerimizin
+          hizmetine sunuyoruz. Lüks konutlardan ticari mülklere, arsa yatırımlarından villa projelerine kadar
+          geniş portföyümüzle yanınızdayız.
+        </p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="about-feature-text">
+              <h4>%100 Güvenilir</h4>
+              <p>Tüm işlemler şeffaf ve yasal süreçlerle yürütülür.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fa-solid fa-handshake"></i></div>
+            <div class="about-feature-text">
+              <h4>Kişiselleştirilmiş Hizmet</h4>
+              <p>Her müşterimize özel strateji ve çözümler geliştiriyoruz.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="about-feature-text">
+              <h4>7/24 Erişilebilir</h4>
+              <p>WhatsApp ve telefon ile her an ulaşabilirsiniz.</p>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;">
+          <a href="#iletisim" class="btn btn-gold">
+            <i class="fa-solid fa-phone-flip"></i> Hemen Ara
+          </a>
+          <a href="portfoy.html" class="btn btn-outline">
+            Portföyü Gör <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ KREDİ HESAPLAYICISI ░░ -->
+<section class="kredi-hero-section" id="hesaplayici">
+  <div class="kredi-hero-bg"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="section-header center animate">
+      <div class="section-label">Finansal Planlama</div>
+      <h2 class="section-title">Kredi <span class="gold-text">Hesaplayıcısı</span></h2>
+      <p class="section-subtitle">Peşinat, vade ve faiz oranını girerek aylık taksitinizi anında hesaplayın.</p>
+      <div class="gold-divider center"></div>
+    </div>
+    <div class="kredi-card animate">
+      <div class="kredi-form-col">
+        <div class="kredi-inputs-grid">
+          <div class="kredi-field">
+            <label><i class="fa-solid fa-lira-sign"></i> Mülk Fiyatı (₺)</label>
+            <input type="text" inputmode="numeric" id="kcFiyat" placeholder="Örn: 5.000.000"
+                   oninput="formatKrediInput(this)" autocomplete="off" />
+          </div>
+          <div class="kredi-field">
+            <label><i class="fa-solid fa-percent"></i> Peşinat (%)</label>
+            <input type="number" id="kcPesinat" value="20" min="0" max="99" />
+          </div>
+          <div class="kredi-field">
+            <label><i class="fa-solid fa-calendar-days"></i> Vade (Ay)</label>
+            <input type="number" id="kcVade" value="120" min="12" max="360" />
+          </div>
+          <div class="kredi-field">
+            <label><i class="fa-solid fa-chart-line"></i> Yıllık Faiz (%)</label>
+            <input type="number" id="kcFaiz" value="32" min="0.1" step="0.5" />
+          </div>
+        </div>
+        <button class="btn btn-gold kredi-submit-btn" onclick="hesaplaKredi()">
+          <i class="fa-solid fa-calculator"></i> Hesapla
+        </button>
+        <p class="kredi-disclaimer">
+          <i class="fa-solid fa-circle-info"></i>
+          Hesaplama yaklaşık değer içindir. Kesin koşullar için bankanızla iletişime geçiniz.
+        </p>
+      </div>
+      <div class="kredi-result-col" id="krediResultCol">
+        <div class="kredi-placeholder" id="krediPlaceholder">
+          <i class="fa-solid fa-calculator"></i>
+          <p>Değerleri girerek hesapla butonuna basın</p>
+        </div>
+        <div class="kredi-results" id="krediResults" style="display:none;">
+          <div class="kredi-res-main">
+            <span class="krr-label">Aylık Taksit</span>
+            <span class="krr-val-big" id="krediAylik">—</span>
+          </div>
+          <div class="kredi-res-grid">
+            <div class="kredi-res-item">
+              <span class="krr-label">Kredi Tutarı</span>
+              <span class="krr-val" id="krediTutar">—</span>
+            </div>
+            <div class="kredi-res-item">
+              <span class="krr-label">Toplam Ödenecek</span>
+              <span class="krr-val" id="krediToplam">—</span>
+            </div>
+            <div class="kredi-res-item">
+              <span class="krr-label">Toplam Faiz</span>
+              <span class="krr-val" id="krediFaizToplam">—</span>
+            </div>
+            <div class="kredi-res-item">
+              <span class="krr-label">Peşinat</span>
+              <span class="krr-val" id="krediPesinatTutar">—</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ YORUMLAR & KONUM ░░ -->
+<section class="yorumlar-section" id="yorumlar">
+  <div class="container">
+
+    <div class="section-header center animate">
+      <div class="section-label">Müşteri Yorumları</div>
+      <h2 class="section-title">Deneyiminizi <span class="gold-text">Paylaşın</span></h2>
+      <p class="section-subtitle">Hizmetimizden memnun kaldıysanız Google yorumunuz diğer müşterilere rehberlik eder.</p>
+      <div class="gold-divider center"></div>
+    </div>
+
+    <div class="yorumlar-grid animate">
+
+      <!-- Sol: Google Maps Embed -->
+      <div class="yorumlar-map-col">
+        <div class="yorumlar-map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=AVA+Gayrimenkul+ve+Yat%C4%B1r%C4%B1m+Atakum+Samsun&output=embed&hl=tr&z=17"
+            width="100%" height="100%"
+            style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="AVA Gayrimenkul Konum">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Sağ: Yorum CTA + Adres -->
+      <div class="yorumlar-cta-col">
+
+        <!-- Google Yorum Kartı -->
+        <div class="yorum-cta-card">
+          <div class="yorum-google-logo">
+            <!-- Google "G" logosu -->
+            <svg viewBox="0 0 24 24" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            </svg>
+            <div class="yorum-google-label">
+              <span class="yorum-google-title">Google Maps</span>
+              <span class="yorum-google-sub">AVA Gayrimenkul & Yatırım</span>
+            </div>
+          </div>
+
+          <div class="yorum-stars-row">
+            <i class="fa-solid fa-star yorum-star"></i>
+            <i class="fa-solid fa-star yorum-star"></i>
+            <i class="fa-solid fa-star yorum-star"></i>
+            <i class="fa-solid fa-star yorum-star"></i>
+            <i class="fa-solid fa-star yorum-star"></i>
+            <span class="yorum-stars-label">Siz de değerlendirin</span>
+          </div>
+
+          <p class="yorum-cta-text">
+            Mülk alım, satım veya kiralama sürecindeki deneyiminizi Google'da paylaşın. Yorumlarınız hem bize hem de diğer müşterilere yol gösterir.
+          </p>
+
+          <a class="btn btn-gold yorum-btn"
+             href="https://www.google.com/maps/search/AVA+Gayrimenkul+ve+Yat%C4%B1r%C4%B1m+Atakum+Samsun"
+             target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-google"></i> Google'da Yorum Yaz
+          </a>
+        </div>
+
+        <!-- Adres & Yol Tarifi -->
+        <div class="yorum-adres-card">
+          <div class="yorum-adres-title">
+            <i class="fa-solid fa-map-pin"></i> Ofisimiz
+          </div>
+          <div class="yorum-adres-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Türker Plaza, Büyükkolpınar, Alaçam Cd. No:127 Kat:3,<br>55200 Atakum / Samsun</span>
+          </div>
+          <div class="yorum-adres-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+905454480868">+90 545 448 08 68</a>
+          </div>
+          <a class="yorum-yol-btn"
+             href="https://www.google.com/maps/dir//AVA+Gayrimenkul+ve+Yat%C4%B1r%C4%B1m,+T%C3%BCrker+Plaza,+B%C3%BCy%C3%BCkkolp%C4%B1nar,+Ala%C3%A7am+Cd.+No:127+Kat:3,+55200+Atakum%2FSamsun"
+             target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-route"></i> Yol Tarifi Al
+          </a>
+        </div>
+
+      </div><!-- /cta-col -->
+    </div><!-- /grid -->
+  </div>
+</section>
+
+<!-- ░░ CONTACT ░░ -->
+<section class="contact-section" id="iletisim">
+  <div class="container">
+    <div class="section-header center animate">
+      <div class="section-label">İletişim</div>
+      <h2 class="section-title">Bizimle <span class="gold-text">İletişime Geçin</span></h2>
+      <p class="section-subtitle">Sorularınız için bize ulaşın. En kısa sürede geri dönüş yapıyoruz.</p>
+      <div class="gold-divider center"></div>
+    </div>
+    <div class="animate" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-bottom:28px;">
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+        <div class="contact-item-text">
+          <label>Telefon</label>
+          <a href="tel:+905454480868">+90 545 448 08 68</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="contact-item-text">
+          <label>WhatsApp</label>
+          <a href="https://wa.me/905454480868" target="_blank">WhatsApp ile Mesaj Gönderin</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+        <div class="contact-item-text">
+          <label>E-Posta</label>
+          <a href="mailto:info@avagayrimenkul.com">info@avagayrimenkul.com</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="contact-item-text">
+          <label>Adres</label>
+          <span>Samsun, Türkiye</span>
+        </div>
+      </div>
+    </div>
+    <div class="animate" style="text-align:center;">
+      <a href="https://wa.me/905454480868?text=Merhaba%2C%20gayrimenkul%20hakkında%20bilgi%20almak%20istiyorum."
+         class="btn btn-gold" target="_blank" style="padding:16px 48px;font-size:0.85rem;">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp ile Hemen Yazın
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="avalogo.png" alt="AVA Gayrimenkul" />
+      <p>
+        AVA Gayrimenkul & Yatırım, Gülşah Çırak önderliğinde lüks gayrimenkul danışmanlığı sunmaktadır.
+        Güven, kalite ve şeffaflık temel değerlerimizdir.
+      </p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="footer-social"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="footer-social"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="footer-social"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Hızlı Linkler</h4>
+      <ul>
+        <li><a href="#anasayfa">Ana Sayfa</a></li>
+        <li><a href="portfoy.html">Portföy</a></li>
+        <li><a href="#hakkimizda">Hakkımızda</a></li>
+        <li><a href="#hizmetler">Hizmetler</a></li>
+        <li><a href="#yorumlar">Yorumlar</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Mülk Tipleri</h4>
+      <ul>
+        <li><a href="portfoy.html?tip=daire">Daire</a></li>
+        <li><a href="portfoy.html?tip=villa">Villa</a></li>
+        <li><a href="portfoy.html?tip=arsa">Arsa</a></li>
+        <li><a href="portfoy.html?tip=ofis">Ofis</a></li>
+        <li><a href="portfoy.html?tip=dukkan">Dükkan</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>İletişim</h4>
+      <ul>
+        <li><a href="tel:+905454480868"><i class="fa-solid fa-phone" style="color:var(--gold);margin-right:6px;"></i>+90 545 448 08 68</a></li>
+        <li><a href="mailto:info@avagayrimenkul.com"><i class="fa-solid fa-envelope" style="color:var(--gold);margin-right:6px;"></i>info@avagayrimenkul.com</a></li>
+        <li style="display:flex;align-items:flex-start;gap:6px;">
+          <i class="fa-solid fa-location-dot" style="color:var(--gold);margin-top:3px;flex-shrink:0;"></i>
+          <span>Türker Plaza, Alaçam Cd. No:127 Kat:3, Atakum / Samsun</span>
+        </li>
+        <li style="margin-top:4px;">
+          <a href="https://www.google.com/maps/search/AVA+Gayrimenkul+ve+Yat%C4%B1r%C4%B1m+Atakum+Samsun"
+             target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;">
+            <i class="fa-brands fa-google" style="color:var(--gold);"></i>Google'da Yorum Yaz
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <span>AVA Gayrimenkul & Yatırım</span>. Tüm hakları saklıdır.</p>
+  </div>
+</footer>
+
+<!-- ░░ SCRIPTS ░░ -->
+<script src="js/main.js"></script>
+<script>
+  // ── Lüks Mobil Menü ──
+  const navToggle  = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function openMobileMenu() {
+    mobileMenu.classList.add('open');
+    navToggle.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    navToggle.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  navToggle.addEventListener('click', () => {
+    mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
+  });
+
+  // Linklere tıklandığında kapat
+  document.querySelectorAll('.mm-link').forEach(l => l.addEventListener('click', closeMobileMenu));
+
+  // ESC ile kapat
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
+
+  // Navbar scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Counter animation
+  function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-count'));
+    let current = 0;
+    const step = Math.max(1, Math.floor(target / 60));
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = current + (el.parentElement.classList.contains('hero-stat') && el === el.parentElement.querySelector('[data-count="95"]') ? '' : (el.getAttribute('data-count') === '10' ? '' : '+'));
+      if (current >= target) { el.textContent = target + (parseInt(el.getAttribute('data-count')) > 50 ? '+' : (parseInt(el.getAttribute('data-count')) === 10 ? '+' : '%')); clearInterval(timer); }
+    }, 25);
+  }
+  const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); counterObserver.unobserve(e.target); }});
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+  // Animate on scroll
+  const animateObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); }});
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.animate').forEach(el => animateObserver.observe(el));
+
+  // Preloader
+  window.addEventListener('load', () => {
+    setTimeout(() => { document.getElementById('preloader').classList.add('hidden'); }, 2200);
+  });
+
+  // Contact form
+  function submitContact(e) {
+    e.preventDefault();
+    showToast('Mesajınız alındı! En kısa sürede dönüş yapacağız.', 'success');
+    e.target.reset();
+  }
+
+  /* ── İlan Arama — DEVRE DIŞI (sahibinden yönlendirmesine geçildi) ──
+  function runSearch() {
+    const islem = document.getElementById('srIslem').value;
+    const tip   = document.getElementById('srTip').value;
+    const konum = document.getElementById('srKonum').value.trim();
+    const fiyat = document.getElementById('srFiyat').value;
+    const params = new URLSearchParams();
+    if (islem) params.set('islem', islem);
+    if (tip)   params.set('tip', tip);
+    if (konum) params.set('konum', konum);
+    if (fiyat) params.set('maxfiyat', fiyat);
+    window.location.href = 'portfoy.html?' + params.toString();
+  }
+
+  ['srKonum', 'srFiyat'].forEach(id => {
+    document.getElementById(id).addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') runSearch();
+    });
+  });
+  ── İlan Arama SONU ── */
+
+  // Sahibinden link from settings
+  const settings = JSON.parse(localStorage.getItem('ava_settings') || '{}');
+  if (settings.sahibindenUrl) {
+    document.getElementById('sahibindenLinkText').textContent = settings.sahibindenUrl.replace(/^https?:\/\//, '');
+    document.getElementById('sahibindenBtn').href = settings.sahibindenUrl;
+    document.getElementById('sahibindenLinkText2').textContent = settings.sahibindenUrl.replace(/^https?:\/\//, '');
+    document.getElementById('sahibindenBtn2').href = settings.sahibindenUrl;
+    // Navbar "Portföy" linklerini sahibinden'e yönlendir
+    document.querySelectorAll('.nav-link[href="portfoy.html"], .mm-link[href="portfoy.html"]').forEach(link => {
+      link.href = settings.sahibindenUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+  }
+
+  // ── Talep FAB: hero geçince göster ──
+  (function() {
+    const fab  = document.getElementById('talepFab');
+    const hero = document.querySelector('.hero');
+    if (!fab || !hero) return;
+    const obs = new IntersectionObserver(([entry]) => {
+      fab.classList.toggle('visible', !entry.isIntersecting);
+    }, { threshold: 0.15 });
+    obs.observe(hero);
+  })();
+
+  // Kredi hesaplama — index.html'e özel çağrı
+  document.getElementById('kcFiyat').addEventListener('keydown', e => { if (e.key === 'Enter') hesaplaKredi(); });
+
+  /* ════════════════════════════════════════
+     MÜLK TALEBİ
+  ════════════════════════════════════════ */
+  const KONUT_TIPLERI  = ['daire','villa'];
+  const ISYERI_TIPLERI = ['ofis','dukkan','bina','depo'];
+
+  function odaMatchTalep(ilanOda, filter) {
+    if (!filter || filter === 'all') return true;
+    if (!ilanOda) return true; // oda belirtilmemişse dahil et
+    const n = parseInt(ilanOda);
+    if (filter === '5') return n >= 5;
+    return n === parseInt(filter);
+  }
+
+  function buildTalepWhatsApp(t) {
+    const tipLabel = { daire:'Daire', villa:'Villa', arsa:'Arsa', ofis:'Ofis', dukkan:'Dükkan', all:'Fark etmez' };
+    const odaLabel = { '1':'1+1', '2':'2+1', '3':'3+1', '4':'4+1', '5':'5+', all:'Fark etmez' };
+    let m = 'Merhaba! Mülk arama talebim var.\n\n';
+    if (t.ilce)                    m += `📍 Bölge: ${t.ilce}\n`;
+    if (t.tur && t.tur !== 'all')  m += `🏠 Kullanım: ${t.tur === 'konut' ? 'Konut' : 'İşyeri'}\n`;
+    if (t.tip && t.tip !== 'all')  m += `🏡 Tip: ${tipLabel[t.tip] || t.tip}\n`;
+    if (t.oda && t.oda !== 'all')  m += `🚪 Oda: ${odaLabel[t.oda] || t.oda}\n`;
+    if (t.alan)                    m += `📐 Maks. Alan: ${t.alan} m²\n`;
+    if (t.butce)                   m += `💰 Bütçe: ${Number(t.butce).toLocaleString('tr-TR')} ₺\n`;
+    m += `\n👤 ${t.ad}\n📞 ${t.tel}\n\nUygun seçenekler için bilgi alabilir miyim?`;
+    return m;
+  }
+
+  function submitTalep(e) {
+    e.preventDefault();
+    const ilce  = document.getElementById('tlIlce').value.trim();
+    const tur   = document.getElementById('tlTur').value;
+    const tip   = document.getElementById('tlTip').value;
+    const oda   = document.getElementById('tlOda').value;
+    const alan  = parseInt(document.getElementById('tlAlan').value) || 0;
+    const butce = parseKrediTutar(document.getElementById('tlButce').value);
+    const ad    = document.getElementById('tlAd').value.trim();
+    const tel   = document.getElementById('tlTel').value.trim();
+
+    // Kaydet
+    const talep = {
+      id: 'talep-' + Date.now() + '-' + Math.random().toString(36).substr(2,4),
+      ilce, tur, tip, oda, alan, butce, ad, tel,
+      tarih: new Date().toISOString(), durum: 'yeni'
+    };
+    const talepler = getTalepler();
+    talepler.unshift(talep);
+    saveTalepler(talepler);
+
+    // Eşleşen ilanları bul
+    const ilanlar = getIlanlar().filter(i => {
+      if (i.durum === 'pasif') return false;
+      if (butce > 0 && i.fiyat > butce) return false;
+      if (tip  && tip  !== 'all' && i.tip  !== tip)  return false;
+      if (tur  === 'konut'  && !KONUT_TIPLERI.includes(i.tip))  return false;
+      if (tur  === 'isyeri' && !ISYERI_TIPLERI.includes(i.tip)) return false;
+      if (!odaMatchTalep(i.oda, oda)) return false;
+      if (alan > 0 && i.metrekare > 0 && i.metrekare > alan * 1.25) return false;
+      if (ilce && !i.konum.toLowerCase().includes(ilce.toLowerCase()) &&
+          !(i.mahalle && i.mahalle.toLowerCase().includes(ilce.toLowerCase()))) return false;
+      return true;
+    }).slice(0, 6);
+
+    // Sonuçları göster
+    const sonucWrap  = document.getElementById('talepSonuclar');
+    const noMatch    = document.getElementById('talepNoMatch');
+    const grid       = document.getElementById('talepMatchGrid');
+    const countEl    = document.getElementById('talepSonucCount');
+    sonucWrap.style.display = 'block';
+    if (ilanlar.length) {
+      noMatch.style.display = 'none';
+      grid.innerHTML = ilanlar.map(i => buildCard(i, true)).join('');
+      countEl.textContent = ilanlar.length + ' ilan bulundu';
+    } else {
+      noMatch.style.display = 'block';
+      grid.innerHTML = '';
+      countEl.textContent = '';
+    }
+
+    // WhatsApp aç
+    const waNum = '905454480868';
+    window.open('https://wa.me/' + waNum + '?text=' + encodeURIComponent(buildTalepWhatsApp(talep)), '_blank');
+
+    showToast('Talebiniz alındı! WhatsApp açılıyor… 🙏', 'success');
+    setTimeout(() => sonucWrap.scrollIntoView({ behavior:'smooth', block:'start' }), 400);
+  }
+</script>
+</body>
+</html>

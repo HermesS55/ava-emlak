@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="AVA Gayrimenkul Portföyü — Satılık ve kiralık konut, villa, arsa, ofis ilanları." />
+  <title>Portföy | AVA Gayrimenkul & Yatırım</title>
+  <link rel="icon" href="avalogo.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ░░ CUSTOM CURSOR ░░ -->
+<div class="cursor-dot"  id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Toast -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- WhatsApp FAB -->
+<a class="whatsapp-fab" href="https://wa.me/905454480868?text=Merhaba%2C%20ilan%20hakkında%20bilgi%20almak%20istiyorum." target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="wa-tooltip">WhatsApp ile Ulaşın</span>
+</a>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="scrolled">
+  <a href="index.html" class="nav-logo">
+    <img src="avalogo.png" alt="AVA Gayrimenkul" />
+  </a>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="index.html#hakkimizda" class="nav-link">Hakkımızda</a></li>
+    <li><a href="portfoy.html" class="nav-link active">Portföy</a></li>
+    <li><a href="index.html#hizmetler" class="nav-link">Hizmetler</a></li>
+    <li><a href="index.html#sahibinden" class="nav-link">Sahibinden</a></li>
+    <li><a href="index.html#talep" class="nav-link">Talep Oluştur</a></li>
+    <li><a href="index.html#hesaplayici" class="nav-link">Kredi Hesapla</a></li>
+    <li><a href="index.html#iletisim" class="nav-link">İletişim</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menü aç/kapat">
+    <div class="hamburger-box">
+      <span class="hb-line hb-top"></span>
+      <span class="hb-line hb-mid"></span>
+      <span class="hb-line hb-bot"></span>
+    </div>
+  </button>
+</nav>
+
+<!-- Mobil tam ekran menü -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+    <div class="mm-logo">
+      <img src="avalogo.png" alt="AVA Gayrimenkul" />
+    </div>
+    <nav class="mm-nav">
+      <a href="index.html#hakkimizda" class="mm-link" data-idx="0">
+        <span class="mm-num">01</span>
+        <span class="mm-text">Hakkımızda</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+      <a href="portfoy.html" class="mm-link active" data-idx="1">
+        <span class="mm-num">02</span>
+        <span class="mm-text">Portföy</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+      <a href="index.html#hizmetler" class="mm-link" data-idx="2">
+        <span class="mm-num">03</span>
+        <span class="mm-text">Hizmetler</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+      <a href="index.html#sahibinden" class="mm-link" data-idx="3">
+        <span class="mm-num">04</span>
+        <span class="mm-text">Sahibinden</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+      <a href="index.html#talep" class="mm-link" data-idx="4">
+        <span class="mm-num">05</span>
+        <span class="mm-text">Talep Oluştur</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+      <a href="index.html#iletisim" class="mm-link" data-idx="5">
+        <span class="mm-num">06</span>
+        <span class="mm-text">İletişim</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+      <a href="index.html#hesaplayici" class="mm-link" data-idx="6">
+        <span class="mm-num">07</span>
+        <span class="mm-text">Kredi Hesapla</span>
+        <i class="fa-solid fa-arrow-right mm-arrow"></i>
+      </a>
+    </nav>
+    <div class="mm-footer">
+      <div class="mm-contact-row">
+        <a href="tel:+905454480868" class="mm-contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+90 545 448 08 68</span>
+        </a>
+        <a href="https://wa.me/905454480868" class="mm-contact-item" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+      <div class="mm-socials">
+        <a href="#" class="mm-social"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <p class="mm-copy">© 2025 AVA Gayrimenkul & Yatırım</p>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="section-label">Portföyümüz</div>
+    <h1><span class="gold-text">Seçkin</span> Mülk Koleksiyonu</h1>
+    <p>Satılık ve kiralık tüm ilanlarımıza buradan ulaşabilirsiniz.</p>
+  </div>
+</div>
+
+<!-- FILTERS BAR — DEVRE DIŞI (sahibinden yönlendirmesine geçildi) -->
+<!--
+<div class="filters-bar">
+  <div class="filters-inner">
+    <span class="filter-label"><i class="fa-solid fa-sliders"></i> Filtre:</span>
+    <button class="filter-btn active" data-filter="all" onclick="setFilter('all', this)">Tümü</button>
+    <button class="filter-btn" data-filter="satilik" onclick="setFilter('satilik', this)">
+      <i class="fa-solid fa-tag"></i> Satılık
+    </button>
+    <button class="filter-btn" data-filter="kiralik" onclick="setFilter('kiralik', this)">
+      <i class="fa-solid fa-key"></i> Kiralık
+    </button>
+    <div class="filter-sep"></div>
+    <button class="filter-btn" data-tip="daire"  onclick="setTipFilter('daire', this)">Daire</button>
+    <button class="filter-btn" data-tip="villa"  onclick="setTipFilter('villa', this)">Villa</button>
+    <button class="filter-btn" data-tip="arsa"   onclick="setTipFilter('arsa', this)">Arsa</button>
+    <button class="filter-btn" data-tip="ofis"   onclick="setTipFilter('ofis', this)">Ofis</button>
+    <button class="filter-btn" data-tip="dukkan" onclick="setTipFilter('dukkan', this)">Dükkan</button>
+    <span class="filter-count" id="filterCount">0 ilan</span>
+    <div style="margin-left:auto;display:flex;align-items:center;gap:10px;">
+      <label style="font-size:0.7rem;color:var(--gold);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;">Sırala:</label>
+      <select id="sortSelect" onchange="renderListings()"
+        style="background:var(--dark-3);border:1px solid rgba(201,164,85,0.2);color:var(--white);
+               padding:8px 14px;font-family:'Poppins',sans-serif;font-size:0.78rem;border-radius:2px;outline:none;">
+        <option value="tarih">En Yeni</option>
+        <option value="fiyat-asc">Fiyat ↑</option>
+        <option value="fiyat-desc">Fiyat ↓</option>
+        <option value="m2">m² ↑</option>
+      </select>
+    </div>
+  </div>
+  <div class="filters-inner filter-oda-row">
+    <span class="filter-label"><i class="fa-solid fa-door-open"></i> Oda:</span>
+    <button class="filter-btn active" data-oda="all" onclick="setOdaFilter('all', this)">Tümü</button>
+    <button class="filter-btn" data-oda="1"   onclick="setOdaFilter('1', this)">1+1</button>
+    <button class="filter-btn" data-oda="2"   onclick="setOdaFilter('2', this)">2+1</button>
+    <button class="filter-btn" data-oda="3"   onclick="setOdaFilter('3', this)">3+1</button>
+    <button class="filter-btn" data-oda="4"   onclick="setOdaFilter('4', this)">4+1</button>
+    <button class="filter-btn" data-oda="5"   onclick="setOdaFilter('5', this)">5+</button>
+  </div>
+</div>
+-->
+
+<!-- PORTFOLIO SECTION — DEVRE DIŞI (sahibinden yönlendirmesine geçildi) -->
+<!--
+<section class="portfolio-section">
+  <div class="container">
+    <div class="properties-grid" id="portfolioGrid">
+    </div>
+    <div class="no-listings" id="noListings" style="display:none;">
+      <i class="fa-solid fa-house-circle-exclamation"></i>
+      <h3>Uygun İlan Bulunamadı</h3>
+      <p>Farklı filtreler deneyin veya tüm ilanları görüntüleyin.</p>
+      <button class="btn btn-outline" onclick="resetFilters()" style="margin-top:20px;">
+        <i class="fa-solid fa-rotate-left"></i> Filtreleri Sıfırla
+      </button>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- SAHİBİNDEN YÖNLENDİRME -->
+<section class="portfolio-section">
+  <div class="container">
+    <div class="sahibinden-card animate" style="max-width:760px;margin:48px auto;">
+      <div class="sahibinden-icon">
+        <i class="fa-solid fa-house-circle-check"></i>
+      </div>
+      <div class="sahibinden-content">
+        <h3>Tüm İlanlarımız <span class="gold-text">Sahibinden.com'da</span></h3>
+        <p>
+          Satılık ve kiralık tüm mülklerimizi sahibinden.com profilimizden inceleyebilirsiniz.
+          Güncel portföyümüze aşağıdaki butona tıklayarak ulaşabilirsiniz.
+        </p>
+        <div class="sahibinden-link-group">
+          <div class="sahibinden-url" id="portfoyUrlDisplay">
+            <i class="fa-solid fa-link"></i>
+            <span id="portfoyLinkText">sahibinden.com/ava-gayrimenkul</span>
+          </div>
+          <a href="#" class="btn btn-gold" id="portfoyBtn" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-external-link"></i> Tüm İlanları Gör
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- İLAN DETAY MODAL — DEVRE DIŞI (sahibinden yönlendirmesine geçildi) -->
+<!--
+<div class="modal-overlay" id="detailModal">
+  <div class="modal" style="max-width:860px;">
+    <div class="modal-header">
+      <h3 id="modalTitle">İlan Detayı</h3>
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+-->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="avalogo.png" alt="AVA Gayrimenkul" />
+      <p>AVA Gayrimenkul & Yatırım olarak lüks gayrimenkul danışmanlığında güvenilir adresiniz.</p>
+      <div class="footer-socials">
+        <a href="#" class="footer-social"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="footer-social"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="footer-social"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Sayfalar</h4>
+      <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="portfoy.html">Portföy</a></li>
+        <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
+        <li><a href="index.html#iletisim">İletişim</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Mülk Tipleri</h4>
+      <ul>
+        <li><a href="portfoy.html?tip=daire">Daire</a></li>
+        <li><a href="portfoy.html?tip=villa">Villa</a></li>
+        <li><a href="portfoy.html?tip=arsa">Arsa</a></li>
+        <li><a href="portfoy.html?tip=ofis">Ofis</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>İletişim</h4>
+      <ul>
+        <li><a href="tel:+905454480868">+90 545 448 08 68</a></li>
+        <li><a href="mailto:info@avagayrimenkul.com">info@avagayrimenkul.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <span>AVA Gayrimenkul & Yatırım</span>. Tüm hakları saklıdır.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // ── Lüks Mobil Menü ──
+  const navToggle  = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  function openMobileMenu()  { mobileMenu.classList.add('open');    navToggle.classList.add('is-open');    document.body.style.overflow = 'hidden'; }
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); navToggle.classList.remove('is-open'); document.body.style.overflow = ''; }
+
+  navToggle.addEventListener('click', () => {
+    mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
+  });
+  document.querySelectorAll('.mm-link').forEach(l => l.addEventListener('click', closeMobileMenu));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
+
+  // ── Filtre durumu ──
+  let currentIslem = 'all';
+  let currentTip   = 'all';
+  let currentOda   = 'all';
+
+  function setFilter(val, btn) {
+    currentIslem = val;
+    document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderListings();
+  }
+
+  function setTipFilter(val, btn) {
+    if (currentTip === val) {
+      currentTip = 'all';
+      btn.classList.remove('active');
+    } else {
+      currentTip = val;
+      document.querySelectorAll('[data-tip]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    renderListings();
+  }
+
+  function setOdaFilter(val, btn) {
+    if (currentOda === val) {
+      currentOda = 'all';
+      btn.classList.remove('active');
+      document.querySelector('[data-oda="all"]').classList.add('active');
+    } else {
+      currentOda = val;
+      document.querySelectorAll('[data-oda]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    renderListings();
+  }
+
+  function odaMatch(ilanOda, filter) {
+    if (filter === 'all') return true;
+    if (!ilanOda) return false;
+    const n = parseInt(ilanOda);
+    if (filter === '5') return n >= 5;
+    return n === parseInt(filter);
+  }
+
+  function resetFilters() {
+    currentIslem = 'all';
+    currentTip   = 'all';
+    currentOda   = 'all';
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-filter="all"]').classList.add('active');
+    document.querySelector('[data-oda="all"]').classList.add('active');
+    document.getElementById('sortSelect').value = 'tarih';
+    renderListings();
+  }
+
+  function renderListings() {
+    const ilanlar = getIlanlar();
+    const sort    = document.getElementById('sortSelect').value;
+
+    // URL params (index.html'den gelen arama parametreleri)
+    const params = new URLSearchParams(window.location.search);
+
+    let filtered = ilanlar.filter(i => {
+      if (i.durum === 'pasif') return false;
+      // Buton filtreleri
+      if (currentIslem !== 'all' && i.islem !== currentIslem) return false;
+      if (currentTip   !== 'all' && i.tip   !== currentTip)   return false;
+      if (!odaMatch(i.oda, currentOda)) return false;
+      // URL parametreleri
+      if (params.get('islem')    && i.islem !== params.get('islem'))                                   return false;
+      if (params.get('tip')      && i.tip   !== params.get('tip'))                                     return false;
+      if (params.get('konum')    && !i.konum.toLowerCase().includes(params.get('konum').toLowerCase())) return false;
+      if (params.get('maxfiyat') && i.fiyat > parseInt(params.get('maxfiyat')))                        return false;
+      return true;
+    });
+
+    // Sırala
+    filtered.sort((a, b) => {
+      if (sort === 'fiyat-asc')  return a.fiyat - b.fiyat;
+      if (sort === 'fiyat-desc') return b.fiyat - a.fiyat;
+      if (sort === 'm2')         return a.metrekare - b.metrekare;
+      return new Date(b.tarih) - new Date(a.tarih);
+    });
+
+    const grid = document.getElementById('portfolioGrid');
+    const none = document.getElementById('noListings');
+    document.getElementById('filterCount').textContent = filtered.length + ' ilan';
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '';
+      none.style.display = 'block';
+      return;
+    }
+    none.style.display = 'none';
+    grid.innerHTML = filtered.map(i => buildCard(i, true)).join('');
+  }
+
+  /* ── Modal — DEVRE DIŞI (sahibinden yönlendirmesine geçildi) ──
+  function openModal(id) {
+    const ilan = getIlanlar().find(i => i.id === id);
+    if (!ilan) return;
+    document.getElementById('modalTitle').textContent = ilan.baslik;
+    document.getElementById('modalBody').innerHTML = buildModalBody(ilan);
+    document.getElementById('detailModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('detailModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('detailModal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  ── Modal SONU ── */
+
+  function buildModalBody(i) {
+    const fiyatText = i.islem === 'kiralik'
+      ? formatFiyat(i.fiyat) + ' / ay'
+      : formatFiyat(i.fiyat);
+    return `
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px;">
+        <div style="border-radius:4px;overflow:hidden;height:260px;">
+          ${i.resimUrl
+            ? `<img src="${i.resimUrl}" alt="${i.baslik}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" />`
+            : `<div style="width:100%;height:100%;background:var(--dark-3);display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:3rem;"><i class="fa-solid fa-image"></i></div>`
+          }
+        </div>
+        <div>
+          <div style="display:flex;gap:8px;margin-bottom:16px;">
+            <span class="badge badge-${i.islem}">${i.islem === 'satilik' ? 'Satılık' : 'Kiralık'}</span>
+            <span class="badge badge-tip">${capitalize(i.tip)}</span>
+          </div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.6rem;background:var(--gold-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;">
+            ${fiyatText}
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;font-size:0.85rem;color:var(--light-gray);margin-bottom:20px;">
+            <i class="fa-solid fa-location-dot" style="color:var(--gold);"></i>${i.konum}
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            ${i.metrekare ? `<div style="background:var(--dark-3);border:1px solid rgba(201,164,85,0.2);border-radius:2px;padding:12px;text-align:center;"><i class="fa-solid fa-ruler-combined" style="color:var(--gold);display:block;margin-bottom:4px;"></i><strong>${i.metrekare} m²</strong></div>` : ''}
+            ${i.oda ? `<div style="background:var(--dark-3);border:1px solid rgba(201,164,85,0.2);border-radius:2px;padding:12px;text-align:center;"><i class="fa-solid fa-door-open" style="color:var(--gold);display:block;margin-bottom:4px;"></i><strong>${i.oda}</strong></div>` : ''}
+          </div>
+        </div>
+      </div>
+      ${i.aciklama ? `<div style="background:var(--dark-3);border:1px solid rgba(201,164,85,0.15);border-radius:4px;padding:20px;margin-bottom:20px;"><h4 style="font-size:0.85rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Açıklama</h4><p style="font-size:0.88rem;color:var(--light-gray);line-height:1.8;">${i.aciklama}</p></div>` : ''}
+      ${i.ozellikler && i.ozellikler.length ? `
+        <div style="margin-bottom:20px;">
+          <h4 style="font-size:0.75rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;">Özellikler</h4>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            ${i.ozellikler.map(o => `<span style="background:rgba(201,164,85,0.1);border:1px solid rgba(201,164,85,0.25);padding:6px 14px;border-radius:2px;font-size:0.78rem;color:var(--gold);">✓ ${o}</span>`).join('')}
+          </div>
+        </div>` : ''}
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+        <a href="https://wa.me/905454480868?text=Merhaba%2C%20${encodeURIComponent(i.baslik)}%20ilanı%20hakkında%20bilgi%20almak%20istiyorum."
+           class="btn btn-gold" target="_blank" style="flex:1;justify-content:center;">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp'tan Ulaş
+        </a>
+        ${i.sahibindenLink ? `<a href="${i.sahibindenLink}" class="btn btn-outline" target="_blank" style="flex:1;justify-content:center;"><i class="fa-solid fa-external-link"></i> Sahibinden'de Gör</a>` : ''}
+      </div>`;
+  }
+
+  /* ── Portföy Init — DEVRE DIŞI (sahibinden yönlendirmesine geçildi) ──
+  initSampleData();
+  renderListings();
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('tip')) {
+    const tipBtn = document.querySelector(`[data-tip="${urlParams.get('tip')}"]`);
+    if (tipBtn) setTipFilter(urlParams.get('tip'), tipBtn);
+  }
+  if (urlParams.get('islem')) {
+    const islemBtn = document.querySelector(`[data-filter="${urlParams.get('islem')}"]`);
+    if (islemBtn) setFilter(urlParams.get('islem'), islemBtn);
+  }
+  ── Portföy Init SONU ── */
+
+  // Sahibinden yönlendirme URL'ini admin ayarlarından oku
+  (function() {
+    const s = JSON.parse(localStorage.getItem('ava_settings') || '{}');
+    if (s.sahibindenUrl) {
+      document.getElementById('portfoyLinkText').textContent = s.sahibindenUrl.replace(/^https?:\/\//, '');
+      document.getElementById('portfoyBtn').href = s.sahibindenUrl;
+      // Navbar "Portföy" linklerini sahibinden'e yönlendir
+      document.querySelectorAll('.nav-link[href="portfoy.html"], .mm-link[href="portfoy.html"]').forEach(link => {
+        link.href = s.sahibindenUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      });
+    }
+  })();
+</script>
+</body>
+</html>
