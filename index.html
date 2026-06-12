@@ -153,8 +153,8 @@
 
     <!-- Eylem Butonları -->
     <div class="hero-actions">
-      <a href="portfoy.html" class="btn btn-gold">
-        Portföyü Keşfet &nbsp;<i class="fa-solid fa-arrow-right"></i>
+      <a href="https://avagayrimenkulyatirim.sahibinden.com" class="btn btn-gold" target="_blank" rel="noopener noreferrer">
+        İlanlarımızı Gör &nbsp;<i class="fa-solid fa-arrow-right"></i>
       </a>
       <a href="#talep" class="btn btn-outline hero-talep-btn">
         <i class="fa-solid fa-magnifying-glass-dollar"></i>&nbsp; Talep Oluştur
@@ -914,15 +914,22 @@
   const navToggle  = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
 
+  let _scrollY = 0;
   function openMobileMenu() {
+    _scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = '-' + _scrollY + 'px';
+    document.body.style.width = '100%';
     mobileMenu.classList.add('open');
     navToggle.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
   }
   function closeMobileMenu() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, _scrollY);
     mobileMenu.classList.remove('open');
     navToggle.classList.remove('is-open');
-    document.body.style.overflow = '';
   }
 
   navToggle.addEventListener('click', () => {

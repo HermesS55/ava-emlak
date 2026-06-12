@@ -57,7 +57,7 @@ button { cursor: pointer; border: none; outline: none; background: none; }
   z-index: 9999;
   transition: opacity 0.8s ease, visibility 0.8s ease;
 }
-#preloader.hidden { opacity: 0; visibility: hidden; }
+#preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 #preloader img { width: 300px; animation: pulse-logo 1.5s ease-in-out infinite; }
 .preloader-bar {
   width: 200px; height: 2px;
@@ -263,14 +263,16 @@ h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; line-
   background: rgba(6,6,6,0.97);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  /* GiriÅŸ animasyonu iÃ§in baÅŸlangÄ±Ã§ durumu */
   opacity: 0; visibility: hidden;
+  pointer-events: none; /* iOS: gizliyken dokunuşları engelleme */
   transition: opacity 0.45s cubic-bezier(0.25,0.46,0.45,0.94),
               visibility 0.45s ease;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .mobile-menu.open {
   opacity: 1; visibility: visible;
+  pointer-events: auto;
 }
 .mobile-menu-inner {
   display: flex; flex-direction: column;
@@ -4005,5 +4007,32 @@ html, body { overflow-x: hidden; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ── 15. iOS tap highlight & touch kalitesi ───────────────────────── */
+a, button, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 768px) {
+  /* Dokunma hedefi genişletme: tüm linklerde minimum 44px */
+  a.btn, button.btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .nav-toggle { min-width: 44px; min-height: 44px; }
+  .mm-link { min-height: 54px; }
+  .mm-contact-item { min-height: 44px; padding: 10px 14px; }
+  .whatsapp-fab, .talep-fab { min-width: 50px; min-height: 50px; }
+  /* Hero butonları tam genişlik, büyük hedef */
+  .hero-actions { gap: 12px; }
+  .hero-actions .btn { min-height: 52px; font-size: 0.78rem; }
+  /* Sahibinden butonları */
+  .sahibinden-link-group .btn { min-height: 48px; width: 100%; justify-content: center; }
+  /* Footer linkleri */
+  .footer-link { display: inline-block; padding: 4px 0; min-height: 36px; line-height: 36px; }
+}
+@media (max-width: 480px) {
+  .hero-actions .btn { font-size: 0.75rem; padding: 14px 20px; }
+  /* 380px altı: çok küçük ekranlar */
+}
+@media (max-width: 380px) {
+  .hero-actions .btn { font-size: 0.72rem; letter-spacing: 1px; }
 }
 
