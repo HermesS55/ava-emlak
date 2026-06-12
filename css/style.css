@@ -3995,8 +3995,7 @@ label, select {
 }
 
 /* ── 13. Genel: taşma önleme ───────────────────────────────────── */
-/* Sadece body'de overflow-x hidden (html'de olması iOS touch'u etkileyebilir) */
-body { overflow-x: hidden; }
+html, body { overflow-x: hidden; }
 .container { max-width: 100%; }
 
 /* Minimum dokunma hedefi: tüm butonlar için */
@@ -4059,5 +4058,85 @@ a, button, [role="button"] {
 }
 @media (max-width: 380px) {
   .hero-actions .btn { font-size: 0.72rem; letter-spacing: 1px; }
+}
+
+/* ╔══════════════════════════════════════════════════════════
+   ║  MOBİL DÜZEN — Kapsamlı Responsive Düzeltmeler
+   ╚══════════════════════════════════════════════════════════ */
+
+/* ── Genel: tüm elementler viewport içinde kalsın ── */
+@media (max-width: 768px) {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  /* Container: her durumda yatay padding */
+  .container { padding-left: 16px; padding-right: 16px; }
+
+  /* Sıfır yatay padding olan sectionlar için yatay alan ekle */
+  .talep-section        { padding-left: 0; padding-right: 0; }
+  .kredi-hero-section   { padding-left: 0; padding-right: 0; }
+  .yorumlar-section     { padding-left: 0; padding-right: 0; }
+
+  /* Hero: içerik tam sığsın */
+  .hero-content { padding-left: 16px; padding-right: 16px; }
+  .hero-actions { width: 100%; padding: 0 4px; }
+  .hero-actions .btn { width: 100%; box-sizing: border-box; }
+
+  /* About badge: ekrandan taşmasın */
+  .about-badge { right: 0; bottom: -12px; padding: 18px 20px; }
+  .about-badge-num { font-size: 1.8rem; }
+  .about-image-wrap { overflow: visible; }
+
+  /* Sahibinden card buton */
+  .sahibinden-link-group { flex-direction: column; gap: 10px; }
+  .sahibinden-link-group .btn { width: 100%; text-align: center; justify-content: center; }
+  .sahibinden-url { width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  /* Contact items */
+  .contact-item-text a,
+  .contact-item-text span { font-size: 0.85rem; word-break: break-word; }
+
+  /* VIP section */
+  .vip-section { padding-left: 16px; padding-right: 16px; }
+
+  /* Section header */
+  .section-title { word-break: break-word; }
+
+  /* Footer */
+  .footer-link { word-break: break-word; }
+
+  /* Luxury ribbon: taşmasın */
+  .luxury-ribbon { overflow: hidden; }
+
+  /* Buton metni taşmasın */
+  .btn { word-break: break-word; max-width: 100%; }
+
+  /* Kredi card */
+  .kredi-card { margin-left: 0; margin-right: 0; border-radius: 0; }
+
+  /* Talep card */
+  .talep-card { border-radius: 4px; }
+}
+
+@media (max-width: 480px) {
+  /* Hero stats 2x2 düzeni */
+  .hero-stat { flex: 1 1 calc(50% - 1px); }
+
+  /* Sahibinden card padding */
+  .sahibinden-card { padding: 24px 16px; }
+
+  /* About badge daha küçük */
+  .about-badge { padding: 14px 16px; }
+  .about-badge-num { font-size: 1.6rem; }
+  .about-badge-text { font-size: 0.7rem; }
+
+  /* Talep banner */
+  .talep-banner-inner { flex-direction: column; gap: 4px; text-align: center; }
+}
+
+@media (max-width: 360px) {
+  .container { padding-left: 12px; padding-right: 12px; }
+  section { padding: 50px 12px; }
+  .hero-content { padding: 90px 12px 32px; }
+  .hero-title { font-size: 1.8rem; }
 }
 

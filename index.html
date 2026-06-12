@@ -910,12 +910,6 @@
 <!-- ░░ SCRIPTS ░░ -->
 <script src="js/main.js"></script>
 <script>
-  // ── Dokunma teşhis: tıklanan elementi konsola yaz ──
-  document.addEventListener('touchstart', function(e) {
-    var t = e.touches[0];
-    var el = document.elementFromPoint(t.clientX, t.clientY);
-    if (el) console.log('[AVA] touchstart →', el.tagName, el.id || '', el.className || '', '| z:', getComputedStyle(el).zIndex, '| pos:', getComputedStyle(el).position);
-  }, { passive: true });
   // ── Lüks Mobil Menü ──
   const navToggle  = document.getElementById('navToggle');
   const mobileMenu = document.getElementById('mobileMenu');
