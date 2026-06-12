@@ -265,8 +265,8 @@
   const mobileMenu = document.getElementById('mobileMenu');
 
   let _scrollY = 0;
-  function openMobileMenu()  { _scrollY = window.scrollY; document.body.style.position='fixed'; document.body.style.top='-'+_scrollY+'px'; document.body.style.width='100%'; mobileMenu.classList.add('open'); navToggle.classList.add('is-open'); }
-  function closeMobileMenu() { document.body.style.position=''; document.body.style.top=''; document.body.style.width=''; window.scrollTo(0,_scrollY); mobileMenu.classList.remove('open'); navToggle.classList.remove('is-open'); }
+  function openMobileMenu()  { _scrollY = window.scrollY; document.body.style.position='fixed'; document.body.style.top='-'+_scrollY+'px'; document.body.style.width='100%'; mobileMenu.classList.remove('closing'); mobileMenu.classList.add('open'); navToggle.classList.add('is-open'); }
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); mobileMenu.classList.add('closing'); document.body.style.position=''; document.body.style.top=''; document.body.style.width=''; window.scrollTo(0,_scrollY); navToggle.classList.remove('is-open'); setTimeout(()=>{ mobileMenu.classList.remove('closing'); }, 360); }
 
   navToggle.addEventListener('click', () => {
     mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
