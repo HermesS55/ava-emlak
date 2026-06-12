@@ -191,9 +191,9 @@
         <div class="sahibinden-link-group">
           <div class="sahibinden-url" id="portfoyUrlDisplay">
             <i class="fa-solid fa-link"></i>
-            <span id="portfoyLinkText">sahibinden.com/ava-gayrimenkul</span>
+            <span id="portfoyLinkText">avagayrimenkulyatirim.sahibinden.com</span>
           </div>
-          <a href="#" class="btn btn-gold" id="portfoyBtn" target="_blank" rel="noopener noreferrer">
+          <a href="https://avagayrimenkulyatirim.sahibinden.com" class="btn btn-gold" id="portfoyBtn" target="_blank" rel="noopener noreferrer">
             <i class="fa-solid fa-external-link"></i> Tüm İlanları Gör
           </a>
         </div>
@@ -453,9 +453,10 @@
   // Sahibinden yönlendirme URL'ini admin ayarlarından oku
   (function() {
     const s = JSON.parse(localStorage.getItem('ava_settings') || '{}');
-    if (s.sahibindenUrl) {
-      document.getElementById('portfoyLinkText').textContent = s.sahibindenUrl.replace(/^https?:\/\//, '');
-      document.getElementById('portfoyBtn').href = s.sahibindenUrl;
+    const sahibindenUrl = s.sahibindenUrl || 'https://avagayrimenkulyatirim.sahibinden.com';
+    {
+      document.getElementById('portfoyLinkText').textContent = sahibindenUrl.replace(/^https?:\/\//, '');
+      document.getElementById('portfoyBtn').href = sahibindenUrl;
       // Navbar "Portföy" linklerini sahibinden'e yönlendir
       document.querySelectorAll('.nav-link[href="portfoy.html"], .mm-link[href="portfoy.html"]').forEach(link => {
         link.href = s.sahibindenUrl;

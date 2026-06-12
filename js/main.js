@@ -44,7 +44,7 @@ const SAMPLE_ILANLAR = [
     aciklama: 'Boğaz manzaralı, ultra lüks rezidans içinde yer alan özel tasarım daire. Akıllı ev sistemleri, yerden ısıtma ve premium malzemeler ile donatılmıştır.',
     resimUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
     ozellikler: ['Asansör','Otopark','Balkon','Güvenlik','Ebeveyn Banyosu','Akıllı Ev','Şehir Manzarası','Klima'],
-    sahibindenLink: 'https://www.sahibinden.com',
+    sahibindenLink: 'https://avagayrimenkulyatirim.sahibinden.com',
     tarih: '2025-05-10', durum: 'aktif'
   },
   {
@@ -56,7 +56,7 @@ const SAMPLE_ILANLAR = [
     aciklama: 'Denize doğrudan erişimi olan, özel havuzlu, peyzajlı bahçesiyle eşsiz bir villa. Mimarisi ile bölgenin en prestijli mülkleri arasında yer almaktadır.',
     resimUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
     ozellikler: ['Havuz','Bahçe','Deniz Manzarası','Teras','Güvenlik','Otopark','Ebeveyn Banyosu'],
-    sahibindenLink: 'https://www.sahibinden.com',
+    sahibindenLink: 'https://avagayrimenkulyatirim.sahibinden.com',
     tarih: '2025-05-08', durum: 'aktif'
   },
   {
@@ -104,7 +104,7 @@ const SAMPLE_ILANLAR = [
     aciklama: 'Bebek koyunun hemen üzerinde, boğaz manzaralı butik apartman katı. Özel tasarım iç mekan, yüksek tavan yüksekliği.',
     resimUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     ozellikler: ['Asansör','Otopark','Deniz Manzarası','Ebeveyn Banyosu','Teras'],
-    sahibindenLink: 'https://www.sahibinden.com',
+    sahibindenLink: 'https://avagayrimenkulyatirim.sahibinden.com',
     tarih: '2025-04-28', durum: 'aktif'
   }
 ];

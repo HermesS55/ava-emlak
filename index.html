@@ -311,9 +311,9 @@
         <div class="sahibinden-link-group">
           <div class="sahibinden-url" id="sahibindenUrlDisplay2">
             <i class="fa-solid fa-link"></i>
-            <span id="sahibindenLinkText2">sahibinden.com/ava-gayrimenkul</span>
+            <span id="sahibindenLinkText2">avagayrimenkulyatirim.sahibinden.com</span>
           </div>
-          <a href="#" class="btn btn-gold" id="sahibindenBtn2" target="_blank" rel="noopener noreferrer">
+          <a href="https://avagayrimenkulyatirim.sahibinden.com" class="btn btn-gold" id="sahibindenBtn2" target="_blank" rel="noopener noreferrer">
             <i class="fa-solid fa-external-link"></i> Tüm İlanları Gör
           </a>
         </div>
@@ -466,9 +466,9 @@
         <div class="sahibinden-link-group">
           <div class="sahibinden-url" id="sahibindenUrlDisplay">
             <i class="fa-solid fa-link"></i>
-            <span id="sahibindenLinkText">sahibinden.com/ava-gayrimenkul</span>
+            <span id="sahibindenLinkText">avagayrimenkulyatirim.sahibinden.com</span>
           </div>
-          <a href="#" class="btn btn-gold" id="sahibindenBtn" target="_blank">
+          <a href="https://avagayrimenkulyatirim.sahibinden.com" class="btn btn-gold" id="sahibindenBtn" target="_blank">
             <i class="fa-solid fa-external-link"></i> İlanları Gör
           </a>
         </div>
@@ -997,11 +997,12 @@
 
   // Sahibinden link from settings
   const settings = JSON.parse(localStorage.getItem('ava_settings') || '{}');
-  if (settings.sahibindenUrl) {
-    document.getElementById('sahibindenLinkText').textContent = settings.sahibindenUrl.replace(/^https?:\/\//, '');
-    document.getElementById('sahibindenBtn').href = settings.sahibindenUrl;
-    document.getElementById('sahibindenLinkText2').textContent = settings.sahibindenUrl.replace(/^https?:\/\//, '');
-    document.getElementById('sahibindenBtn2').href = settings.sahibindenUrl;
+  const sahibindenUrl = settings.sahibindenUrl || 'https://avagayrimenkulyatirim.sahibinden.com';
+  {
+    document.getElementById('sahibindenLinkText').textContent = sahibindenUrl.replace(/^https?:\/\//, '');
+    document.getElementById('sahibindenBtn').href = sahibindenUrl;
+    document.getElementById('sahibindenLinkText2').textContent = sahibindenUrl.replace(/^https?:\/\//, '');
+    document.getElementById('sahibindenBtn2').href = sahibindenUrl;
     // Navbar "Portföy" linklerini sahibinden'e yönlendir
     document.querySelectorAll('.nav-link[href="portfoy.html"], .mm-link[href="portfoy.html"]').forEach(link => {
       link.href = settings.sahibindenUrl;
