@@ -427,8 +427,8 @@
       </form>
     </div><!-- /talep-card -->
 
-    <!-- Sonuçlar -->
-    <div id="talepSonuclar" style="display:none;" class="talep-sonuc-wrap">
+    <!-- Sonuçlar — devre dışı (portföy kaldırıldı) -->
+    <div id="talepSonuclar" style="display:none!important;" class="talep-sonuc-wrap">
       <div class="talep-sonuc-header">
         <h3>Portföyümüzden <span class="gold-text">Öneriler</span></h3>
         <p class="talep-sonuc-count" id="talepSonucCount"></p>
@@ -1095,28 +1095,11 @@
       return true;
     }).slice(0, 6);
 
-    // Sonuçları göster
-    const sonucWrap  = document.getElementById('talepSonuclar');
-    const noMatch    = document.getElementById('talepNoMatch');
-    const grid       = document.getElementById('talepMatchGrid');
-    const countEl    = document.getElementById('talepSonucCount');
-    sonucWrap.style.display = 'block';
-    if (ilanlar.length) {
-      noMatch.style.display = 'none';
-      grid.innerHTML = ilanlar.map(i => buildCard(i, true)).join('');
-      countEl.textContent = ilanlar.length + ' ilan bulundu';
-    } else {
-      noMatch.style.display = 'block';
-      grid.innerHTML = '';
-      countEl.textContent = '';
-    }
-
     // WhatsApp aç
     const waNum = '905454480868';
     window.open('https://wa.me/' + waNum + '?text=' + encodeURIComponent(buildTalepWhatsApp(talep)), '_blank');
 
     showToast('Talebiniz alındı! WhatsApp açılıyor… 🙏', 'success');
-    setTimeout(() => sonucWrap.scrollIntoView({ behavior:'smooth', block:'start' }), 400);
   }
 </script>
 </body>
